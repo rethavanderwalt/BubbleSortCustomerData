@@ -12,36 +12,44 @@ package bubblesortcustomerdata;
 public class BubbleSortCustomerData {
 
     // use bubble sort
-        void doBubbleSort(int arr[]){
+        //Sort customer name
+        public static void doBubbleSortNames(CustomerData arr[]){
             int n = arr.length;
-            for (int i = 0; i < n-1; i++)
-                for (int j = 0; j < n-i-1; j++)
-                    if (arr[j] > arr[j+1])
+            for (int i = 0; i < n; i++)
+                for (int j = 1; j < (n-i); j++)
+                    if (arr[j-1].getName().compareTo(arr[j].getName()) > 0)
                     {
                         // swap temp and arr[i]
-                        int temp = arr[j];
-                        arr[j] = arr[j+1];
-                        arr[j+1] = temp;
+                        CustomerData temp = arr[j-1];
+                        arr[j-1] = arr[j];
+                        arr[j] = temp;
                     }
         }
         
-    // Prints the customer rating array 
-        void printRatingArray(CustomerData arr[]){
+        // Sort Customer Rating
+        public static void doBubbleSortRating(CustomerData arr[]){
             int n = arr.length;
-            for (int i=0; i<n; ++i)
-                System.out.print(arr[i].getRating() + " ");
-            System.out.println();
-            System.out.println();
+            for (int i = 0; i < n; i++)
+                for (int j = 1; j < (n-i); j++)
+                    if (arr[j-1].getRating().compareTo(arr[j].getRating()) > 0)
+                    {
+                        // swap temp and arr[i]
+                        CustomerData temp = arr[j-1];
+                        arr[j-1] = arr[j];
+                        arr[j] = temp;
+                    }
         }
         
-    // Prints the customer name array 
-        void printNameArray(CustomerData arr[]){
-            int n = arr.length;
-            for (int i=0; i<n; ++i)
-                System.out.print(arr[i].getName() + " ");
-            System.out.println();
-            System.out.println();
-        }
+ 
+    /* Prints the array */
+    void printArray(CustomerData arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i].getName() + " ");
+        System.out.println();
+        System.out.println();
+    }
         
     
     public static void main(String[] args) {
@@ -65,18 +73,21 @@ public class BubbleSortCustomerData {
         
         // display unsorted collection
         System.out.println("The Unsorted customer rating array is: ");
-        ob.printRatingArray(arr);
+        ob.printArray(arr);
         
         System.out.println("The Unsorted name array is: ");
-        ob.printNameArray(arr);
+        ob.printArray(arr);
         
         
         // sort by customer rating (ascending)
-        ob.doBubbleSort(arr);
-        System.out.println("The Basic Bubble Sorted array is");
-        ob.printRatingArray(arr);
+        ob.doBubbleSortRating(arr);
+        System.out.println("The Rating Sorted array is");
+        ob.printArray(arr);
         
             // then by customer name (decending)
+            ob.doBubbleSortNames(arr);
+            System.out.println("The Name Sorted array is");
+            ob.printArray(arr);
         
         // display sorted data
             // terminate program
