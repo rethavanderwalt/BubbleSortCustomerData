@@ -11,10 +11,10 @@ package bubblesortcustomerdata;
  */
 public class CustomerData {
     String name;
-    int customerRating;
+    String customerRating;
     String address;
      
-    public CustomerData (String name, int customerRating, String address) {
+    public CustomerData (String name, String customerRating, String address) {
         this.name = name;
         this.customerRating = customerRating;
         this.address = address;
@@ -24,5 +24,13 @@ public class CustomerData {
         return "Customer Name: " + name + 
                 "\nCustomer rating: " + customerRating + 
                 "\nCustomer address: " + address + "\n" + "\n";
+    }
+    
+    public String getRating(){
+    return customerRating;
+    }
+    
+    public String getName(){
+    return name;
     }
 }
