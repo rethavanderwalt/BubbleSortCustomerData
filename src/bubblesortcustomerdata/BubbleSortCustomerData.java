@@ -12,45 +12,40 @@ package bubblesortcustomerdata;
 public class BubbleSortCustomerData {
 
     // use bubble sort
-        void doBubbleSort(int arr[])
-        {
-            int n = arr.length;
+        void doBubbleSort(int getRating[]){
+            int n = getRating.length;
             for (int i = 0; i < n-1; i++)
                 for (int j = 0; j < n-i-1; j++)
-                    if (arr[j] > arr[j+1])
+                    if (getRating[j] > getRating[j+1])
                     {
                         // swap temp and arr[i]
-                        int temp = arr[j];
-                        arr[j] = arr[j+1];
-                        arr[j+1] = temp;
+                        int temp = getRating[j];
+                        getRating[j] = getRating[j+1];
+                        getRating[j+1] = temp;
                     }
         }
         
-    // Prints the array 
-        void printArray(int arr[])
-        {
+    // Prints the customer rating array 
+        void printRatingArray(CustomerData arr[]){
             int n = arr.length;
             for (int i=0; i<n; ++i)
-                System.out.print(arr[i] + " ");
+                System.out.print(arr[i].getRating() + " ");
+            System.out.println();
+            System.out.println();
+        }
+        
+    // Prints the customer name array 
+        void printNameArray(CustomerData arr[]){
+            int n = arr.length;
+            for (int i=0; i<n; ++i)
+                System.out.print(arr[i].getName() + " ");
             System.out.println();
             System.out.println();
         }
         
     
     public static void main(String[] args) {
-        // welcome message
-        
-        // display unsorted collection
-        
-       
-        
-        // sort by customer rating (ascending)
-            // then by customer name (decending)
-        
-        // display sorted data
-            // terminate program
-            
-            
+    // Customer data records
         BubbleSortCustomerData ob = new BubbleSortCustomerData();
         CustomerData arr[] = {
             new CustomerData("Tama", 2, "Auckland"),
@@ -64,6 +59,28 @@ public class BubbleSortCustomerData {
             new CustomerData("Bob", 4, "Papakura"),
             new CustomerData("Wiremu", 5, "Auckland"),
         };
+        
+        // welcome message
+        System.out.println("Welcome! Here we will be ordering the customer data\n");
+        
+        // display unsorted collection
+        System.out.println("The Unsorted customer rating array is: ");
+        ob.printRatingArray(arr);
+        
+        System.out.println("The Unsorted name array is: ");
+        ob.printNameArray(arr);
+        
+        
+        // sort by customer rating (ascending)
+        ob.doBubbleSort(arr);
+        
+            // then by customer name (decending)
+        
+        // display sorted data
+            // terminate program
+            
+            
+        
     }
     
 }
