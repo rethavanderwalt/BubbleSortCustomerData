@@ -12,16 +12,16 @@ package bubblesortcustomerdata;
 public class BubbleSortCustomerData {
 
     // use bubble sort
-        void doBubbleSort(int getRating[]){
-            int n = getRating.length;
+        void doBubbleSort(int arr[]){
+            int n = arr.length;
             for (int i = 0; i < n-1; i++)
                 for (int j = 0; j < n-i-1; j++)
-                    if (getRating[j] > getRating[j+1])
+                    if (arr[j] > arr[j+1])
                     {
                         // swap temp and arr[i]
-                        int temp = getRating[j];
-                        getRating[j] = getRating[j+1];
-                        getRating[j+1] = temp;
+                        int temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
                     }
         }
         
@@ -48,16 +48,16 @@ public class BubbleSortCustomerData {
     // Customer data records
         BubbleSortCustomerData ob = new BubbleSortCustomerData();
         CustomerData arr[] = {
-            new CustomerData("Tama", 2, "Auckland"),
-            new CustomerData("Amelia", 5, "Taranaki"),
-            new CustomerData("Kaos", 3, "Hamilton"),
-            new CustomerData("Karl", 4, "Papatoetoe"),
-            new CustomerData("Carlos", 5, "Glenfield"),
-            new CustomerData("Alicia", 2, "Whangarai"),
-            new CustomerData("Zion", 2, "Wellingotn"),
-            new CustomerData("Sara", 3, "Auckland"),
-            new CustomerData("Bob", 4, "Papakura"),
-            new CustomerData("Wiremu", 5, "Auckland"),
+            new CustomerData("Tama", "2", "Auckland"),
+            new CustomerData("Amelia", "5", "Taranaki"),
+            new CustomerData("Kaos", "3", "Hamilton"),
+            new CustomerData("Karl", "4", "Papatoetoe"),
+            new CustomerData("Carlos", "5", "Glenfield"),
+            new CustomerData("Alicia", "2", "Whangarai"),
+            new CustomerData("Zion", "2", "Wellingotn"),
+            new CustomerData("Sara", "3", "Auckland"),
+            new CustomerData("Bob", "4", "Papakura"),
+            new CustomerData("Wiremu", "5", "Auckland"),
         };
         
         // welcome message
@@ -73,6 +73,8 @@ public class BubbleSortCustomerData {
         
         // sort by customer rating (ascending)
         ob.doBubbleSort(arr);
+        System.out.println("The Basic Bubble Sorted array is");
+        ob.printRatingArray(arr);
         
             // then by customer name (decending)
         
