@@ -38,6 +38,7 @@ public class BubbleSortCustomerData {
                         arr[j-1] = arr[j];
                         arr[j] = temp;
                     }
+             
         }
         
  
@@ -77,10 +78,11 @@ public class BubbleSortCustomerData {
 
         System.out.println("Array sorted by customer rating (ascending), and then by customer name(descending): \n");
          // sort by customer rating (ascending) 
-            ob.doBubbleSortRating(arr);
+         doBubbleSortNames(arr);   
+         doBubbleSortRating(arr);
            
         // sort by customer name (decending)
-            ob.doBubbleSortNames(arr);
+           
         
         // display sorted data
             System.out.println("The Sorted array is");
