@@ -10,9 +10,9 @@ package bubblesortcustomerdata;
  * @author 91030418
  */
 public class CustomerData {
-    String name;
-    String customerRating;
-    String address;
+    private String name;
+    private String customerRating;
+    private String address;
      
     public CustomerData (String name, String customerRating, String address) {
         this.name = name;
@@ -33,4 +33,6 @@ public class CustomerData {
     public String getName(){
     return name;
     }
+    
+    
 }
