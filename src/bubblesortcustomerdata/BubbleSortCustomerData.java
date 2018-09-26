@@ -46,7 +46,7 @@ public class BubbleSortCustomerData {
     {
         int n = arr.length;
         for (int i=0; i<n; ++i)
-            System.out.print(arr[i].getName() + " ");
+            System.out.print(arr[i] + " ");
         System.out.println();
         System.out.println();
     }
@@ -72,28 +72,21 @@ public class BubbleSortCustomerData {
         System.out.println("Welcome! Here we will be ordering the customer data\n");
         
         // display unsorted collection
-        System.out.println("The Unsorted customer rating array is: ");
+        System.out.println("The Unsorted array is: ");
         ob.printArray(arr);
-        
-        System.out.println("The Unsorted name array is: ");
-        ob.printArray(arr);
-        
-        
-        // sort by customer rating (ascending)
-        ob.doBubbleSortRating(arr);
-        System.out.println("The Rating Sorted array is");
-        ob.printArray(arr);
-        
-            // then by customer name (decending)
+
+        System.out.println("Array sorted by customer rating (ascending), and then by customer name(descending): \n");
+         // sort by customer rating (ascending) 
+            ob.doBubbleSortRating(arr);
+           
+        // sort by customer name (decending)
             ob.doBubbleSortNames(arr);
-            System.out.println("The Name Sorted array is");
-            ob.printArray(arr);
         
         // display sorted data
-            // terminate program
-            
-            
+            System.out.println("The Sorted array is");
+            ob.printArray(arr);
+        }
         
     }
     
-}
+
